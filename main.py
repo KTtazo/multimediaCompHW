@@ -20,3 +20,6 @@ def extract_features(img_path, model):
     flattened_features = features.flatten()
     normalized_features = flattened_features / norm(flattened_features)
     return normalized_features
+
+features = extract_features('../../sample_images/cat.jpg', model)
+print(len(features))
