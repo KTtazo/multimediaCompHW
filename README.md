@@ -1,5 +1,6 @@
 # multimediaCompHW
 Repository for multimedia computing homework spring 2022
+
 With resnet we aggregate new layers to the neural networkis such a way we put te so called residual connections among the layers.
 This connections is not folllowing the straight order in a succesive way, but it connects not-traditionally conected layers by jumping one or more levels. 
 By using this technique, we can ensure a much better performance than the average neural networks with traditional connections.
