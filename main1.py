@@ -57,8 +57,11 @@ list_of_features = []
 for i in tqdm_notebook(range(len(filenames))):
     list_of_features.append(extract_features(filenames[i], model))
 
-file_name='features-caltech101.pkl'
-f = open(file_name,'wb')
-pickle.dump(list_of_features,f)
-f.close()
 
+pickle.dump(list_of_features, open('features-caltech101-resnet.pickle', 'wb'))
+pickle.dump(filenames, open('filenames-caltech101.pickle','wb'))
+
+
+from sklearn.neighbors import NearestNeighbors
+neighbors = NearestNeighbors(n_neighbors=5, algorithm='brute',metric='euclidean').fit(feature_list)
+distances, indices = neighbors.kneighbors([feature_list[0]])
